@@ -2,7 +2,7 @@ from weather_api import fetch_weather
 from db import init_db, insert_log, get_logs, delete_logs
 
 def main():
-    init_db()
+    init_db() // initialize database
     while True:
         print("\nWeather Logger")
         print("1. Fetch & Store Weather")
@@ -15,7 +15,7 @@ def main():
             city = input("Enter city name: ")
             try:
                 data = fetch_weather(city)
-                insert_log(data)
+                insert_log(data)    //fetching data through Weather API
                 print(f"Logged: {data}")
             except Exception as e:
                 print(f"Error: {e}")
